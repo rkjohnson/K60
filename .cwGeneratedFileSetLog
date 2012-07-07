@@ -1,0 +1,6 @@
+Sources/main.h
+Sources/main.c
+Sources/rtcs_init.c
+Sources/shell_init.c
+.settings/com.freescale.core.ide.newprojectwizard.prefs
+ReferencedRSESystems.xml
