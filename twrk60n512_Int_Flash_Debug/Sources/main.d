@@ -105,4 +105,6 @@ Sources/main.obj: C:\Users\Ryan\workspace\K60\Sources\main.c \
 	C:\Freescale\Freescale\ MQX\ 3.8\lib\twrk60n512.cw10\rtcs\rtcs_in.h \
 	C:\Freescale\Freescale\ MQX\ 3.8\lib\twrk60n512.cw10\rtcs\dhcp.h \
 	C:\Freescale\Freescale\ MQX\ 3.8\lib\twrk60n512.cw10\shell\sh_rtcs.h \
-	C:\Freescale\Freescale\ MQX\ 3.8\lib\twrk60n512.cw10\rtcs\ipcfg.h 
+	C:\Freescale\Freescale\ MQX\ 3.8\lib\twrk60n512.cw10\rtcs\ipcfg.h \
+	C:\Users\Ryan\workspace\K60\Sources\demo.h \
+	C:\Users\Ryan\workspace\K60\Sources\tower_io.h 

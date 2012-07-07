@@ -27,7 +27,7 @@
 					<folderInfo id="com.freescale.arm.cdt.toolchain.config.arm.release.1752670910." name="/" resourcePath="">
 						<toolChain id="com.freescale.arm.cdt.toolchain.arm.release.1462004988" name="ARM Toolchain" superClass="com.freescale.arm.cdt.toolchain.arm.release">
 							<targetPlatform id="com.freescale.arm.cdt.toolchain.targetplatform.744569706" isAbstract="false" name="ARM Target Platform" superClass="com.freescale.arm.cdt.toolchain.targetplatform"/>
-							<builder buildPath="${ProjDirPath}/twrk60n512_Int_RAM" id="com.freescale.arm.cdt.toolchain.builder.168561764" keepEnvironmentInBuildfile="false" name="GNU Make Builder" parallelizationNumber="-1" superClass="com.freescale.arm.cdt.toolchain.builder"/>
+							<builder buildPath="${ProjDirPath}/twrk60n512_Int_RAM" id="com.freescale.arm.cdt.toolchain.builder.168561764" keepEnvironmentInBuildfile="false" name="GNU Make Builder" parallelBuildWorkspaceOn="true" parallelizationNumber="-1" superClass="com.freescale.arm.cdt.toolchain.builder"/>
 							<tool id="com.freescale.arm.cdt.toolchain.linker.853555242" name="ARM Linker" superClass="com.freescale.arm.cdt.toolchain.linker">
 								<option id="com.freescale.arm.cdt.toolchain.linker.libraries.libSearch.987187002" name="Library Search Paths" superClass="com.freescale.arm.cdt.toolchain.linker.libraries.libSearch" valueType="stringList">
 									<listOptionValue builtIn="false" value="&quot;${MCUToolsBaseDir}/ARM_EABI_Support/ewl/lib&quot;"/>
@@ -97,6 +97,12 @@
 							<tool id="com.freescale.arm.cdt.toolchain.disassembler.919415302" name="ARM Disassembler" superClass="com.freescale.arm.cdt.toolchain.disassembler"/>
 						</toolChain>
 					</folderInfo>
+					<fileInfo id="com.freescale.arm.cdt.toolchain.config.arm.release.1752670910.812826060" name="jshell.c" rcbsApplicability="disable" resourcePath="Sources/jshell.c" toolsToInvoke="com.freescale.arm.cdt.toolchain.compiler.1552363658.2138289055">
+						<tool id="com.freescale.arm.cdt.toolchain.compiler.1552363658.2138289055" name="ARM Compiler" superClass="com.freescale.arm.cdt.toolchain.compiler.1552363658"/>
+					</fileInfo>
+					<sourceEntries>
+						<entry excluding="Sources/jshell.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+					</sourceEntries>
 				</configuration>
 			</storageModule>
 			<storageModule moduleId="scannerConfiguration">
@@ -897,7 +903,7 @@
 					<folderInfo id="com.freescale.arm.cdt.toolchain.config.arm.release.523954580." name="/" resourcePath="">
 						<toolChain id="com.freescale.arm.cdt.toolchain.arm.release.1097934050" name="ARM Toolchain" superClass="com.freescale.arm.cdt.toolchain.arm.release">
 							<targetPlatform id="com.freescale.arm.cdt.toolchain.targetplatform.1269445197" isAbstract="false" name="ARM Target Platform" superClass="com.freescale.arm.cdt.toolchain.targetplatform"/>
-							<builder buildPath="${ProjDirPath}/twrk60n512_Int_Flash_Release" id="com.freescale.arm.cdt.toolchain.builder.906115000" keepEnvironmentInBuildfile="false" name="GNU Make Builder" superClass="com.freescale.arm.cdt.toolchain.builder"/>
+							<builder buildPath="${ProjDirPath}/twrk60n512_Int_Flash_Release" id="com.freescale.arm.cdt.toolchain.builder.906115000" keepEnvironmentInBuildfile="false" name="GNU Make Builder" parallelBuildWorkspaceOn="true" superClass="com.freescale.arm.cdt.toolchain.builder"/>
 							<tool id="com.freescale.arm.cdt.toolchain.linker.997289865" name="ARM Linker" superClass="com.freescale.arm.cdt.toolchain.linker">
 								<option id="com.freescale.arm.cdt.toolchain.linker.libraries.libSearch.1140432580" name="Library Search Paths" superClass="com.freescale.arm.cdt.toolchain.linker.libraries.libSearch" valueType="stringList">
 									<listOptionValue builtIn="false" value="&quot;${MCUToolsBaseDir}/ARM_EABI_Support/ewl/lib&quot;"/>
@@ -967,6 +973,12 @@
 							<tool id="com.freescale.arm.cdt.toolchain.disassembler.372810420" name="ARM Disassembler" superClass="com.freescale.arm.cdt.toolchain.disassembler"/>
 						</toolChain>
 					</folderInfo>
+					<fileInfo id="com.freescale.arm.cdt.toolchain.config.arm.release.523954580.434379152" name="jshell.c" rcbsApplicability="disable" resourcePath="Sources/jshell.c" toolsToInvoke="com.freescale.arm.cdt.toolchain.compiler.1151046517.2071050581">
+						<tool id="com.freescale.arm.cdt.toolchain.compiler.1151046517.2071050581" name="ARM Compiler" superClass="com.freescale.arm.cdt.toolchain.compiler.1151046517"/>
+					</fileInfo>
+					<sourceEntries>
+						<entry excluding="Sources/jshell.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+					</sourceEntries>
 				</configuration>
 			</storageModule>
 			<storageModule moduleId="scannerConfiguration">
@@ -1767,7 +1779,7 @@
 					<folderInfo id="com.freescale.arm.cdt.toolchain.config.arm.release.1151672818." name="/" resourcePath="">
 						<toolChain id="com.freescale.arm.cdt.toolchain.arm.release.817586850" name="ARM Toolchain" superClass="com.freescale.arm.cdt.toolchain.arm.release">
 							<targetPlatform id="com.freescale.arm.cdt.toolchain.targetplatform.267421501" isAbstract="false" name="ARM Target Platform" superClass="com.freescale.arm.cdt.toolchain.targetplatform"/>
-							<builder buildPath="${ProjDirPath}/twrk60n512_Int_Flash_Debug" id="com.freescale.arm.cdt.toolchain.builder.1963702151" keepEnvironmentInBuildfile="false" name="GNU Make Builder" superClass="com.freescale.arm.cdt.toolchain.builder"/>
+							<builder buildPath="${ProjDirPath}/twrk60n512_Int_Flash_Debug" id="com.freescale.arm.cdt.toolchain.builder.1963702151" keepEnvironmentInBuildfile="false" name="GNU Make Builder" parallelBuildWorkspaceOn="true" superClass="com.freescale.arm.cdt.toolchain.builder"/>
 							<tool id="com.freescale.arm.cdt.toolchain.linker.1348624611" name="ARM Linker" superClass="com.freescale.arm.cdt.toolchain.linker">
 								<option id="com.freescale.arm.cdt.toolchain.linker.libraries.libSearch.943126176" name="Library Search Paths" superClass="com.freescale.arm.cdt.toolchain.linker.libraries.libSearch" valueType="stringList">
 									<listOptionValue builtIn="false" value="&quot;${MCUToolsBaseDir}/ARM_EABI_Support/ewl/lib&quot;"/>
@@ -1837,6 +1849,12 @@
 							<tool id="com.freescale.arm.cdt.toolchain.disassembler.1898362298" name="ARM Disassembler" superClass="com.freescale.arm.cdt.toolchain.disassembler"/>
 						</toolChain>
 					</folderInfo>
+					<fileInfo id="com.freescale.arm.cdt.toolchain.config.arm.release.1151672818.987284399" name="jshell.c" rcbsApplicability="disable" resourcePath="Sources/jshell.c" toolsToInvoke="com.freescale.arm.cdt.toolchain.compiler.1082147316.1158943554">
+						<tool id="com.freescale.arm.cdt.toolchain.compiler.1082147316.1158943554" name="ARM Compiler" superClass="com.freescale.arm.cdt.toolchain.compiler.1082147316"/>
+					</fileInfo>
+					<sourceEntries>
+						<entry excluding="Sources/jshell.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+					</sourceEntries>
 				</configuration>
 			</storageModule>
 			<storageModule moduleId="scannerConfiguration">

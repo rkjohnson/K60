@@ -2,7 +2,7 @@
 # Automatically-generated file. Do not edit!
 ################################################################################
 
-#Progress monitor hint: 3
+#Progress monitor hint: 7
 first : all
 -include ../makefile.init
 
@@ -66,7 +66,7 @@ all: K60.afx
 # Tool invocations
 K60.afx: $(OBJS) $(LCF_BUILD_DEPENCENCY) $(USER_OBJS) $(LCF_SRCS)
 	@echo 'Building target: $@'
-	@echo 'Executing target #4 $@'
+	@echo 'Executing target #8 $@'
 	@echo 'Invoking: ARM Linker'
 	"$(ARM_ToolsDirEnv)/mwldarm" @@"K60.args" -o "K60.afx"  $(USER_OBJS_QUOTED) $(LIBS_QUOTED)
 	@echo 'Finished building target: $@'

@@ -30,8 +30,7 @@
 *END************************************************************************/
 
 #include "main.h"
-
-
+#include "demo.h"
 
 const SHELL_COMMAND_STRUCT Shell_commands[] = {
 
@@ -83,10 +82,15 @@ const SHELL_COMMAND_STRUCT Telnetd_shell_commands[] = {
 
 TASK_TEMPLATE_STRUCT MQX_template_list[] =
 {
-/*  Task number, Entry point, Stack, Pri, String, Auto? */
-   {MAIN_TASK,   Main_task,   2000,  9,   "main", MQX_AUTO_START_TASK},
-   {0,           0,           0,     0,   0,      0,                 }
+/*  Task number, Entry point, Stack, Pri, String,  Auto? */
+   {MAIN_TASK,   Main_task,   2000,  10,  "main",  MQX_AUTO_START_TASK},
+   {ADC_TASK,    ADC_Task,    2000,  8,   "ADC",   0,                 },
+   {ACCEL_TASK,  Accel_Task,  2000,  9,   "accel", 0,                 },
+   {0,           0,           0,     0,   0,       0,                 }
 };
+
+/* Global Variables */
+SENSOR_DATA Sensor;
 
 /*TASK*-----------------------------------------------------------------
 *
@@ -120,6 +124,15 @@ void Main_task(uint_32 initial_data)
 //   fprintf(serial_fd,"\r\nHELLO!!!\r\n");
 //   fprintf(serial_fd,"Starting system...\r\n");
 //   printf("Hello\r\n");
+//
+   /* Setup GPIO */
+  InitializeIO();
+   
+   /* Create Acceletometer Task to read accelerometer data */
+   _task_create(0,ACCEL_TASK,0);
+
+   /* Create ADC Task to read POT and Temp Sensor */
+   _task_create(0,ADC_TASK,0);
    
    /* RTCS init */
     rtcs_init();
@@ -127,8 +140,8 @@ void Main_task(uint_32 initial_data)
    for (;;)  
    {
       /* Run the shell */
-	   printf("starting");
-      Shell(Shell_commands, "ttyd:");//NULL);
+      printf("starting");
+      Shell(Shell_commands, NULL);
       printf("Shell exited, restarting...\n");
    }
 
