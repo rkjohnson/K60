@@ -1,4 +1,4 @@
-Sources/rtcs_init.obj: C:\Users\Ryan\workspace\K60\Sources\rtcs_init.c \
+Sources/main_task.obj: C:\Users\Ryan\workspace\K60\Sources\main_task.c \
 	C:\Freescale\CW\ MCU\ v10.2\MCU\ARM_EABI_Support\ewl\EWL_C\include\lib_ewl.prefix \
 	C:\Freescale\CW\ MCU\ v10.2\MCU\ARM_EABI_Support\ewl\EWL_C\include\common.prefix \
 	C:\Freescale\CW\ MCU\ v10.2\MCU\ARM_EABI_Support\ewl\EWL_C\include\ewl_c_version.h \
@@ -105,4 +105,6 @@ Sources/rtcs_init.obj: C:\Users\Ryan\workspace\K60\Sources\rtcs_init.c \
 	C:\Freescale\Freescale\ MQX\ 3.8\lib\twrk60n512.cw10\rtcs\rtcs_in.h \
 	C:\Freescale\Freescale\ MQX\ 3.8\lib\twrk60n512.cw10\rtcs\dhcp.h \
 	C:\Freescale\Freescale\ MQX\ 3.8\lib\twrk60n512.cw10\shell\sh_rtcs.h \
-	C:\Freescale\Freescale\ MQX\ 3.8\lib\twrk60n512.cw10\rtcs\ipcfg.h 
+	C:\Freescale\Freescale\ MQX\ 3.8\lib\twrk60n512.cw10\rtcs\ipcfg.h \
+	C:\Users\Ryan\workspace\K60\Sources\demo.h \
+	C:\Users\Ryan\workspace\K60\Sources\tower_io.h 

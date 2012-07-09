@@ -90,9 +90,9 @@ extern char ir_string[50];
 
 /* Prototype for Tasks */
 void Init_Task(uint_32);
-void Accel_Task(uint_32);
+void accel_task(uint_32);
 void IR_Task();
-void ADC_Task();
+void adc_task();
 void shell_task(uint_32);
 void sdcard_task(uint_32);
 

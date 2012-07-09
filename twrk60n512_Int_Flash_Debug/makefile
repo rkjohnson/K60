@@ -2,7 +2,7 @@
 # Automatically-generated file. Do not edit!
 ################################################################################
 
-#Progress monitor hint: 7
+#Progress monitor hint: 6
 first : all
 -include ../makefile.init
 
@@ -51,13 +51,10 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-K60.afx \
 
 EXECUTABLES_QUOTED += \
-"K60.afx" \
 
 EXECUTABLES_OS_FORMAT += \
-K60.afx \
 
 
 # All Target
@@ -66,7 +63,7 @@ all: K60.afx
 # Tool invocations
 K60.afx: $(OBJS) $(LCF_BUILD_DEPENCENCY) $(USER_OBJS) $(LCF_SRCS)
 	@echo 'Building target: $@'
-	@echo 'Executing target #8 $@'
+	@echo 'Executing target #7 $@'
 	@echo 'Invoking: ARM Linker'
 	"$(ARM_ToolsDirEnv)/mwldarm" @@"K60.args" -o "K60.afx"  $(USER_OBJS_QUOTED) $(LIBS_QUOTED)
 	@echo 'Finished building target: $@'

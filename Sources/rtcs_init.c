@@ -21,7 +21,7 @@
 * THE POSSIBILITY OF SUCH DAMAGE.
 *
 *END************************************************************************/
-#include "main.h"
+#include "main_task.h"
 #include <ipcfg.h>
 
 #if RTCS_PPP

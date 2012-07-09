@@ -32,7 +32,7 @@ void InitializeADC();
    *
    * Task then waits 500ms before sampling values again
    */
-void ADC_Task()
+void adc_task()
 {
   float temp;
   float vtemp;

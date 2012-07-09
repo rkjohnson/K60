@@ -15,7 +15,7 @@ Copyright (c) 2012 JAR
 //-----------------------------------------------------------------------------
 
 /* #####   HEADER FILE INCLUDES   ################################################### */
-#include "main.h"
+#include "main_task.h"
 #include "demo.h"
 
 /* #####   VARIABLES  -  EXPORTED VARIABLES   ####################################### */
@@ -24,6 +24,9 @@ SENSOR_DATA Sensor;
 /* #####   MACROS  -  LOCAL TO THIS SOURCE FILE   ################################### */
 
 /* #####   TYPE DEFINITIONS  -  LOCAL TO THIS SOURCE FILE   ######################### */
+
+/* #####   PROTOTYPES  -  LOCAL TO THIS SOURCE FILE   ############################### */
+int_32 Shell_led( int_32 argc, char_ptr argv[] );
 
 /* #####   VARIABLES  -  LOCAL TO THIS SOURCE FILE   ################################ */
 const SHELL_COMMAND_STRUCT Shell_commands[] = {
@@ -54,7 +57,6 @@ const SHELL_COMMAND_STRUCT Shell_commands[] = {
    { NULL,        NULL },
 };
 
-#if 0
 const SHELL_COMMAND_STRUCT Telnetd_shell_commands[] = {
    /* RTCS commands */
    { "exit",      Shell_exit },
@@ -70,9 +72,9 @@ const SHELL_COMMAND_STRUCT Telnetd_shell_commands[] = {
    { "telnet",    Shell_Telnet_client },
    { "walkrt",    Shell_walkroute },
    { "?",         Shell_command_list },
+   { "led",       Shell_led },
    { NULL,        NULL }
 };
-#endif
 
 /*
  * Application task list
@@ -81,12 +83,10 @@ TASK_TEMPLATE_STRUCT MQX_template_list[] =
 {
 /*  Task number, Entry point, Stack, Pri, String,  Auto? */
     {MAIN_TASK,   main_task,   2000,  10,  "main",  MQX_AUTO_START_TASK},
-    {ADC_TASK,    ADC_Task,    2000,  8,   "ADC",   0,                 },
+    {ADC_TASK,    adc_task,    2000,  8,   "ADC",   0,                 },
     {ACCEL_TASK,  accel_task,  2000,  9,   "accel", 0,                 },
     {0,           0,           0,     0,   0,       0,                 }
 };
-
-/* #####   PROTOTYPES  -  LOCAL TO THIS SOURCE FILE   ############################### */
 
 /* #####   FUNCTION DEFINITIONS  -  EXPORTED FUNCTIONS   ############################ */
 
@@ -151,15 +151,54 @@ void main_task ( uint_32 initial_data )
 /**
  * @brief handler for the led shell command
  *
- * @param void
+ * @param int_32
+ * @param char_ptr
  * 
- * @return void
+ * @return int_32
  */
 // =====================================================================================
-void Shell_led ( void )
+int_32 Shell_led ( int_32 argc, char_ptr argv[] )
 {
+   boolean  bPrintUsage, bShortHelp = FALSE;
+   int_32   return_code = SHELL_EXIT_SUCCESS;
+   int_32   nLED;
+
+   bPrintUsage = Shell_check_help_request(argc, argv, &bShortHelp );
+
+   if( !bPrintUsage ) {
+      if( argc == 3 ) {
+
+         nLED = _io_atoi( argv[1] );
+
+         if( (nLED < LED1) || (nLED > LED4) ) {
+            bPrintUsage = TRUE;
+         } else {
+            if( strcmp( argv[1], "on") == 0 ) {
+               set_output( nLED, TRUE );
+            } else
+            if( strcmp( argv[1], "off") == 0 ) {
+               set_output( nLED, FALSE );
+            } else {
+               bPrintUsage = TRUE;
+            }
+         }
+      } else {
+         bPrintUsage = TRUE;
+      }
+   }
    
-   return ;
+   if( bPrintUsage ) {
+      /* print usage */
+      if( bShortHelp ) {
+         printf("%s <num> <on/off>", argv[0]);
+      } else {
+         printf("Usage: %s <num> <on/off>\n", argv[0]);
+         printf("   <num>    = led number (0..3)\n");
+         printf("   <on/off> = turn on or off\n");
+      }
+   }
+
+   return( return_code );
 }      /* -----  end of function Shell_led  ----- */
 
 /* EOF */
