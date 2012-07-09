@@ -1,49 +1,46 @@
-#ifndef __main_h_
-#define __main_h_
+//-----------------------------------------------------------------------------
+/*
+Copyright (c) 2012 JAR
+*/
+//-----------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------
+/**
+ * @file MAIN_TASK.H
+ *
+ * application, board, and task setup. Main program loop
+ *
+ * @version $Id$
+ */
+//-----------------------------------------------------------------------------
+
+#ifndef _MAIN_TASK_H_
+#define _MAIN_TASK_H_
+
+/* #####   HEADER FILE INCLUDES   ################################################### */
 #include <mqx.h>
 #include <bsp.h>
-
-
-
 #include <shell.h>
-#define APPLICATION_HAS_SHELL
-
 #include <rtcs.h>
-#ifdef APPLICATION_HAS_SHELL
 #include <sh_rtcs.h>
-#endif
 #include <ipcfg.h>
 
+/* #####   EXPORTED MACROS   ######################################################## */
+#define APPLICATION_HAS_SHELL
 
+#define MAIN_TASK       1
+#define ENET_DEVICE     0
+#define RTCS_DHCP       1
 
-#define MAIN_TASK   1
- 
+#define ENET_IPADDR     IPADDR(169,254,3,3)
+#define ENET_IPMASK     IPADDR(255,255,0,0)
+#define ENET_GATEWAY    IPADDR(0,0,0,0)
+#define RTCS_PPP        0
 
-#define ENET_DEVICE 0
-#define RTCS_DHCP 1
-
-#define ENET_IPADDR IPADDR(169,254,3,3)
-#define ENET_IPMASK IPADDR(255,255,0,0)
-#define ENET_GATEWAY IPADDR(0,0,0,0)
-#define RTCS_PPP 0
-
-     
- 
-
-extern void Main_task (uint_32);
-
-
-void rtcs_init(void);
-
-
-
-
-
-
-/* PPP device must be set manually and 
-** must be different from the default IO channel (BSP_DEFAULT_IO_CHANNEL) 
+/* PPP device must be set manually and
+** must be different from the default IO channel (BSP_DEFAULT_IO_CHANNEL)
 */
-#define PPP_DEVICE      "ittyb:" 
+#define PPP_DEVICE      "ittyb:"
 
 /*
 ** Define PPP_DEVICE_DUN only when using PPP to communicate
@@ -64,5 +61,14 @@ void rtcs_init(void);
 */
 #define GATE_ADDR       IPADDR(192,168,0,1)
 
-#endif /* __main_h_ */
+/* #####   EXPORTED TYPE DEFINITIONS   ############################################## */
 
+/* #####   EXPORTED DATA TYPES   #################################################### */
+
+/* #####   EXPORTED VARIABLES   ##################################################### */
+
+/* #####   EXPORTED FUNCTION DECLARATIONS   ######################################### */
+void main_task( uint_32 );
+void rtcs_init( void );
+
+#endif /* _MAIN_TASK_H_ */

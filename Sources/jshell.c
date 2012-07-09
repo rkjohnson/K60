@@ -1,40 +1,20 @@
-/**HEADER********************************************************************
-* 
-* Copyright (c) 2008 Freescale Semiconductor;
-* All Rights Reserved
-*
-* Copyright (c) 2004-2008 Embedded Access Inc.;
-* All Rights Reserved
-*
-* Copyright (c) 1989-2008 ARC International;
-* All Rights Reserved
-*
-*************************************************************************** 
-*
-* THIS SOFTWARE IS PROVIDED BY FREESCALE "AS IS" AND ANY EXPRESSED OR 
-* IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES 
-* OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  
-* IN NO EVENT SHALL FREESCALE OR ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
-* INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES 
-* (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR 
-* SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) 
-* HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, 
-* STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING 
-* IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF 
-* THE POSSIBILITY OF SUCH DAMAGE.
-*
-**************************************************************************
-*
-* $FileName: shell.c$
-* $Version : 3.8.16.0$
-* $Date    : Sep-19-2011$
-*
-* Comments:
-*
-*   This file contains the RTCS shell.
-*
-*END************************************************************************/
+//-----------------------------------------------------------------------------
+/*
+Copyright (c) 2012 JAR
+*/
+//-----------------------------------------------------------------------------
 
+//-----------------------------------------------------------------------------
+/**
+ * @file JSHELL.C
+ *
+ * Customized RTCS shell
+ *
+ * @version $Id$
+ */
+//-----------------------------------------------------------------------------
+
+/* #####   HEADER FILE INCLUDES   ################################################### */
 #include <ctype.h>
 #include <string.h>
 #include <mqx.h>
@@ -42,6 +22,7 @@
 #include "shell.h"
 #include "sh_prv.h"
 
+/* #####   FUNCTION DEFINITIONS  -  EXPORTED FUNCTIONS   ############################ */
    
 /*FUNCTION*-------------------------------------------------------------
 *
@@ -61,9 +42,11 @@ int_32 Shell
    // int_32               return_code;
    uint_32              i;
 
-   printf("\nShell (build: %s)\n", __DATE__);
+   printf("\nShell (build: %s)\n\n", __DATE__);
    //printf("Copyright (c) 2008 Freescale Semiconductor;\n");
+   printf("===========================\n");
    printf("Welcome to the JAR shell...\n");
+   printf("===========================\n");
    
    shell_ptr = _mem_alloc_zero( sizeof( SHELL_CONTEXT ));
    if (shell_ptr == NULL)  {
@@ -159,6 +142,5 @@ int_32 Shell
    _mem_free(shell_ptr);
    return SHELL_EXIT_SUCCESS;
 } /* Endbody */
-
 
 /* EOF */

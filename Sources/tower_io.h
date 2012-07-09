@@ -1,9 +1,29 @@
-#ifndef __tower_io_h__
-#define __tower_io_h__
+//-----------------------------------------------------------------------------
+/*
+Copyright (c) 2012 JAR
+*/
+//-----------------------------------------------------------------------------
 
+//-----------------------------------------------------------------------------
+/**
+ * @file TOWER_IO.H
+ *
+ * functions for setting up & interfacing with the tower's IO
+ *
+ * @version $Id$
+ */
+//-----------------------------------------------------------------------------
 
+#ifndef _TOWER_IO_H_
+#define _TOWER_IO_H_
+
+/* #####   HEADER FILE INCLUDES   ################################################### */
+
+/* #####   EXPORTED MACROS   ######################################################## */
+
+/* #####   EXPORTED TYPE DEFINITIONS   ############################################## */
 typedef enum {
-   LED1=0,
+   LED1 = 0,
    LED2,
    LED3,
    LED4,
@@ -11,16 +31,20 @@ typedef enum {
 } Output_t;
 
 typedef enum {
-   SW1_INPUT=0,
+   SW1_INPUT = 0,
    SW2_INPUT,
    MAX_INPUTS
 } Input_t;
 
-static FILE_PTR input_port=NULL, output_port=NULL;
+/* #####   EXPORTED DATA TYPES   #################################################### */
 
-boolean InitializeIO(void);
-boolean GetInput(Input_t);
-void SetOutput(Output_t,boolean);
-void ResetOutputs(void);
+/* #####   EXPORTED VARIABLES   ##################################################### */
 
-#endif
+/* #####   EXPORTED FUNCTION DECLARATIONS   ######################################### */
+boolean initialize_io( void );
+boolean get_input( Input_t );
+void set_output( Output_t, boolean );
+void reset_outputs( void );
+
+
+#endif /* _TOWER_IO_H_ */
