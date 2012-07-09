@@ -80,7 +80,7 @@ void accel_task ( uint_32 data )
       Sensor.mma7660_status = recv_buffer[3];
 
       _time_delay( 300 );
-      print_accelerometer_data();
+      //print_accelerometer_data();
    }
 
    /* Close the driver */

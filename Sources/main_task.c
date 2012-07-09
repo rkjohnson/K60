@@ -128,7 +128,7 @@ void main_task ( uint_32 initial_data )
    /* Setup GPIO */
    initialize_io();
    
-   /* Create Acceletometer Task to read accelerometer data */
+   /* Create Accelerometer Task to read accelerometer data */
    _task_create(0,ACCEL_TASK,0);
 
    /* Create ADC Task to read POT and Temp Sensor */
@@ -173,10 +173,10 @@ int_32 Shell_led ( int_32 argc, char_ptr argv[] )
          if( (nLED < LED1) || (nLED > LED4) ) {
             bPrintUsage = TRUE;
          } else {
-            if( strcmp( argv[1], "on") == 0 ) {
+            if( strcmp( argv[2], "on") == 0 ) {
                set_output( nLED, TRUE );
             } else
-            if( strcmp( argv[1], "off") == 0 ) {
+            if( strcmp( argv[2], "off") == 0 ) {
                set_output( nLED, FALSE );
             } else {
                bPrintUsage = TRUE;
