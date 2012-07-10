@@ -90,4 +90,21 @@ Sources/accel_task.obj: C:\Users\Ryan\workspace\K60\Sources\accel_task.c \
 	C:\Freescale\Freescale\ MQX\ 3.8\lib\twrk60n512.cw10\bsp\i2s_audio.h \
 	C:\Freescale\Freescale\ MQX\ 3.8\lib\twrk60n512.cw10\bsp\iodebug.h \
 	C:\Freescale\Freescale\ MQX\ 3.8\lib\twrk60n512.cw10\bsp\tchres.h \
-	C:\Users\Ryan\workspace\K60\Sources\tower_io.h 
+	C:\Users\Ryan\workspace\K60\Sources\tower_io.h \
+	C:\Users\Ryan\workspace\K60\Sources\main_task.h \
+	C:\Freescale\Freescale\ MQX\ 3.8\lib\twrk60n512.cw10\shell\shell.h \
+	C:\Freescale\Freescale\ MQX\ 3.8\lib\twrk60n512.cw10\shell\sh_enet.h \
+	C:\Freescale\Freescale\ MQX\ 3.8\lib\twrk60n512.cw10\rtcs\rtcs.h \
+	C:\Freescale\Freescale\ MQX\ 3.8\lib\twrk60n512.cw10\rtcs\rtcsvers.h \
+	C:\Freescale\Freescale\ MQX\ 3.8\lib\twrk60n512.cw10\rtcs\rtcsrtos.h \
+	C:\Freescale\Freescale\ MQX\ 3.8\lib\twrk60n512.cw10\rtcs\rtcs25x.h \
+	C:\Freescale\Freescale\ MQX\ 3.8\lib\twrk60n512.cw10\psp\message.h \
+	C:\Freescale\Freescale\ MQX\ 3.8\lib\twrk60n512.cw10\psp\part.h \
+	C:\Freescale\Freescale\ MQX\ 3.8\lib\twrk60n512.cw10\psp\log.h \
+	C:\Freescale\Freescale\ MQX\ 3.8\lib\twrk60n512.cw10\psp\klog.h \
+	C:\Freescale\Freescale\ MQX\ 3.8\lib\twrk60n512.cw10\rtcs\rtcscfg.h \
+	C:\Freescale\Freescale\ MQX\ 3.8\lib\twrk60n512.cw10\rtcs\rtcslog.h \
+	C:\Freescale\Freescale\ MQX\ 3.8\lib\twrk60n512.cw10\rtcs\rtcs_in.h \
+	C:\Freescale\Freescale\ MQX\ 3.8\lib\twrk60n512.cw10\rtcs\dhcp.h \
+	C:\Freescale\Freescale\ MQX\ 3.8\lib\twrk60n512.cw10\shell\sh_rtcs.h \
+	C:\Freescale\Freescale\ MQX\ 3.8\lib\twrk60n512.cw10\rtcs\ipcfg.h 

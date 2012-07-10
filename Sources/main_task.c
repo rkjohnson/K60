@@ -20,6 +20,7 @@ Copyright (c) 2012 JAR
 
 /* #####   VARIABLES  -  EXPORTED VARIABLES   ####################################### */
 SENSOR_DATA Sensor;
+boolean bPrintAccelData = FALSE;
 
 /* #####   MACROS  -  LOCAL TO THIS SOURCE FILE   ################################### */
 
@@ -27,6 +28,7 @@ SENSOR_DATA Sensor;
 
 /* #####   PROTOTYPES  -  LOCAL TO THIS SOURCE FILE   ############################### */
 int_32 Shell_led( int_32 argc, char_ptr argv[] );
+int_32 Shell_accel( int_32 argc, char_ptr argv[] );
 
 /* #####   VARIABLES  -  LOCAL TO THIS SOURCE FILE   ################################ */
 const SHELL_COMMAND_STRUCT Shell_commands[] = {
@@ -54,6 +56,7 @@ const SHELL_COMMAND_STRUCT Shell_commands[] = {
    { "?",         Shell_command_list },
    { "exit",      Shell_exit },
    { "led",       Shell_led },
+   { "accel",     Shell_accel },
    { NULL,        NULL },
 };
 
@@ -73,6 +76,7 @@ const SHELL_COMMAND_STRUCT Telnetd_shell_commands[] = {
    { "walkrt",    Shell_walkroute },
    { "?",         Shell_command_list },
    { "led",       Shell_led },
+   { "accel",     Shell_accel },
    { NULL,        NULL }
 };
 
@@ -190,15 +194,73 @@ int_32 Shell_led ( int_32 argc, char_ptr argv[] )
    if( bPrintUsage ) {
       /* print usage */
       if( bShortHelp ) {
-         printf("%s <num> <on/off>", argv[0]);
+         printf("%s <num> <on/off>\r\n", argv[0]);
       } else {
-         printf("Usage: %s <num> <on/off>\n", argv[0]);
-         printf("   <num>    = led number (0..3)\n");
-         printf("   <on/off> = turn on or off\n");
+         printf("Usage: %s <num> <on/off>\r\n", argv[0]);
+         printf("   <num>    = led number (0..3)\r\n");
+         printf("   <on/off> = turn on or off\r\n");
       }
    }
 
    return( return_code );
 }      /* -----  end of function Shell_led  ----- */
+
+// ===  FUNCTION  ======================================================================
+//         Name:  Shell_accel
+/**
+ * @brief handler for the accel shell command
+ *
+ * @param int_32
+ * @param char_ptr
+ * 
+ * @return int_32
+ */
+// =====================================================================================
+int_32 Shell_accel ( int_32 argc, char_ptr argv[] )
+{
+   boolean  bPrintUsage, bShortHelp = FALSE;
+   int_32   return_code = SHELL_EXIT_SUCCESS;
+   int      tmp;
+
+   bPrintUsage = Shell_check_help_request(argc, argv, &bShortHelp );
+
+//   if( !bPrintUsage ) {
+//      if( argc == 2 ) {
+//         if( strcmp( argv[1], "on") == 0 ) {
+//            bPrintAccelData = TRUE;
+//         } else
+//         if( strcmp( argv[1], "off") == 0 ) {
+//            bPrintAccelData = FALSE;
+//         } else {
+//            bPrintUsage = TRUE;
+//         }
+//      } else {
+//         bPrintUsage = TRUE;
+//      }
+//   }
+   
+   if( !bPrintUsage ) {
+      printf("Printing accelerometer data... hit any key to stop\r\n");
+   
+      while( !status() ) {
+         _time_delay( 500 );
+         printf("Accel: X = %03d, ", Sensor.mma7660_x );
+         printf("Y = %03d, ", Sensor.mma7660_y );
+         printf("Z = %03d\r\n", Sensor.mma7660_z );
+      }
+   }
+   
+   if( bPrintUsage ) {
+      /* print usage */
+      if( bShortHelp ) {
+         printf("%s <on/off>\r\n", argv[0]);
+      } else {
+         printf("Usage: %s <on/off>\r\n", argv[0]);
+         printf("   <on/off> = turn accel prints on or off\r\n");
+      }
+   }
+
+   return( return_code );
+}      /* -----  end of function Shell_accel  ----- */
 
 /* EOF */

@@ -66,6 +66,7 @@ Copyright (c) 2012 JAR
 /* #####   EXPORTED DATA TYPES   #################################################### */
 
 /* #####   EXPORTED VARIABLES   ##################################################### */
+extern boolean bPrintAccelData;
 
 /* #####   EXPORTED FUNCTION DECLARATIONS   ######################################### */
 void main_task( uint_32 );

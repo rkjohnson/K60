@@ -17,6 +17,7 @@ Copyright (c) 2012 JAR
 /* #####   HEADER FILE INCLUDES   ################################################### */
 #include "demo.h"
 #include <i2c.h>
+#include "main_task.h"
 
 /* #####   VARIABLES  -  EXPORTED VARIABLES   ####################################### */
 extern SENSOR_DATA Sensor;
@@ -80,7 +81,9 @@ void accel_task ( uint_32 data )
       Sensor.mma7660_status = recv_buffer[3];
 
       _time_delay( 300 );
-      //print_accelerometer_data();
+//      if( bPrintAccelData ) {
+//         print_accelerometer_data();
+//      }
    }
 
    /* Close the driver */
@@ -172,11 +175,18 @@ void read_I2C(int i2c_device_address, int sensor, int length)
 void print_accelerometer_data()
 {
    //MMA7660 Sensor
+
+   printf("Accel: X = %03d, ", Sensor.mma7660_x );
+   printf("Y = %03d, ", Sensor.mma7660_y );
+   printf("Z = %03d\r\n", Sensor.mma7660_z );
+
+#if 0
    printf("Accelerometer:\n");
    printf("  MMA7660 X-Axis: %d\n",Sensor.mma7660_x);
    printf("  MMA7660 Y-Axis: %d\n",Sensor.mma7660_y);
    printf("  MMA7660 Z-Axis: %d\n",Sensor.mma7660_z);
    printf("  MMA7660 Status: %02X\n",Sensor.mma7660_status);
+#endif
 }
 
 // ===  FUNCTION  ======================================================================

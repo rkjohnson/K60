@@ -42,11 +42,11 @@ int_32 Shell
    // int_32               return_code;
    uint_32              i;
 
-   printf("\nShell (build: %s)\n\n", __DATE__);
+   printf("\r\nShell (build: %s)\r\n\r\n", __DATE__);
    //printf("Copyright (c) 2008 Freescale Semiconductor;\n");
-   printf("===========================\n");
-   printf("Welcome to the JAR shell...\n");
-   printf("===========================\n");
+   printf("===========================\r\n");
+   printf("Welcome to the JAR shell...\r\n");
+   printf("===========================\r\n");
    
    shell_ptr = _mem_alloc_zero( sizeof( SHELL_CONTEXT ));
    if (shell_ptr == NULL)  {
@@ -74,7 +74,7 @@ int_32 Shell
 #endif //SHELLCFG_USES_MFS
    
    if (shell_ptr->CMD_LINE){
-      printf("shell> %s\n",shell_ptr->CMD_LINE);
+      printf("shell> %s\r\n",shell_ptr->CMD_LINE);
    } else {
       printf("shell> ");
    }
@@ -85,7 +85,7 @@ int_32 Shell
       if ((!shell_ptr->EXIT) && (shell_ptr->CMD_LINE[0] != '\0'))  {
          
          if (shell_ptr->COMMAND_FP != stdin)  {
-            printf("%s\n", shell_ptr->CMD_LINE);
+            printf("%s\r\n", shell_ptr->CMD_LINE);
          }
       
          if (shell_ptr->CMD_LINE[0] != '#') {
@@ -111,7 +111,7 @@ int_32 Shell
                } 
             
                if (shell_commands[i].COMMAND == NULL)  {
-                 printf("Invalid command.  Type 'help' for a list of commands.\n");
+                 printf("Invalid command.  Type 'help' for a list of commands.\r\n");
                } 
             }
          }
@@ -128,7 +128,7 @@ int_32 Shell
                   shell_ptr->COMMAND_FP = stdin;
                   shell_ptr->HISTORY[0]=0;
                   shell_ptr->CMD_LINE[0]=0;
-                  printf("\n");
+                  printf("\r\n");
                } else  {
                   shell_ptr->EXIT=TRUE;
                   break;
@@ -138,7 +138,7 @@ int_32 Shell
       }
    } 
 
-   printf("Terminating shell.\n");
+   printf("Terminating shell.\r\n");
    _mem_free(shell_ptr);
    return SHELL_EXIT_SUCCESS;
 } /* Endbody */
